@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Giacometti Maurer Advocacia. Especialistas em Direito de Família, Patrimônio, Imobiliário e Sucessões. Atendimento ético e estratégico.">
+    <title>Giacometti Maurer | Advocacia em Família & Patrimônio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIÁVEIS E RESET --- */
+        :root {
+            /* PALETA GIACOMETTI MAURER (Baseada nas imagens) */
+            --primary: #d4af37; /* Dourado Nobre */
+            --primary-dark: #b59026;
+            --bg-dark: #0e140e; /* Verde Quase Preto */
+            --bg-card: #151f15; /* Verde Musgo Escuro */
+            --bg-light: #f4f4f4; /* Off-white para seções claras */
+            
+            --text-gold: #d4af37;
+            --text-white: #f0f0f0;
+            --text-gray: #a0a0a0;
+            --text-dark: #333333;
+            
+            --transition: all 0.4s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Títulos em Serifa (Elegância Jurídica) */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- BOTÕES SÓBRIOS --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: transparent;
+            color: var(--primary);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: 1px solid var(--primary);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--bg-dark);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(14, 20, 14, 0.98); /* Fundo sólido para leitura */
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-white);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo span { 
+            font-size: 0.7rem; 
+            color: var(--primary); 
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+
+        .nav-links { display: flex; gap: 30px; }
+        
+        .nav-links a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .menu-toggle { display: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; }
+
+        /* --- HERO SECTION (Sóbria e Institucional) --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Imagem de fundo jurídica/abstrata escurecida */
+            background: linear-gradient(rgba(14, 20, 14, 0.85), rgba(14, 20, 14, 0.7)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--text-white);
+        }
+
+        .hero-content h1 span { color: var(--primary); font-style: italic; }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* --- SOBRE (História e Valores) --- */
+        .about { padding: 100px 0; background-color: var(--bg-dark); }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--text-white); }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+            text-align: justify;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 20px;
+        }
+        
+        .stat-item h4 { color: var(--primary); font-size: 1.5rem; }
+        .stat-item span { color: var(--text-gray); font-size: 0.85rem; text-transform: uppercase; }
+
+        .about-img-styled {
+            border: 1px solid var(--primary);
+            padding: 10px;
+            filter: grayscale(100%); /* Fotos em preto e branco ficam mais elegantes */
+            transition: var(--transition);
+        }
+        
+        .about-img-styled:hover { filter: grayscale(0%); }
+
+        /* --- ÁREAS DE ATUAÇÃO (Foco no Conteúdo das Imagens) --- */
+        .areas { padding: 100px 0; background-color: var(--bg-card); }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .area-card {
+            background: rgba(255,255,255,0.02);
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+            border-top: 3px solid transparent;
+        }
+
+        .area-card:hover {
+            border-top-color: var(--primary);
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .area-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .area-card h3 { color: var(--text-white); margin-bottom: 20px; font-size: 1.4rem; }
+
+        .area-list { list-style: none; }
+        
+        .area-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .area-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .disclaimer-text {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* --- EQUIPE (Advogados) --- */
+        .team { padding: 100px 0; background-color: var(--bg-dark); }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .team-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        .team-info { padding: 25px; }
+        .team-info h4 { color: var(--primary); margin-bottom: 5px; font-size: 1.3rem; }
+        .team-info .oab { font-size: 0.8rem; color: #fff; display: block; margin-bottom: 15px; font-family: 'Roboto', sans-serif; letter-spacing: 1px; }
+        .team-info p { font-size: 0.9rem; color: var(--text-gray); line-height: 1.4; }
+
+        /* --- BLOG / CONTEÚDO EDUCATIVO --- */
+        .blog { padding: 80px 0; background-color: #f9f9f9; color: var(--text-dark); }
+        .blog .section-title { color: var(--bg-dark); }
+        .blog .section-title::after { background-color: var(--bg-dark); }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .article-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .article-card h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--bg-dark); }
+        .article-card p { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+        .read-more { color: var(--primary-dark); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+
+        /* --- CONTATO & WHATSAPP --- */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(rgba(14, 20, 14, 0.9), rgba(14, 20, 14, 0.95)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(21, 31, 21, 0.95);
+            padding: 50px;
+            border: 1px solid var(--primary);
+            text-align: center;
+        }
+
+        .contact-info p { margin-bottom: 15px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .contact-info i { color: var(--primary); }
+
+        .whatsapp-btn-large {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background-color: #25D366; /* Verde WhatsApp oficial */
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 30px;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .whatsapp-btn-large:hover { background-color: #1ebc57; }
+        
+        .disclaimer-small {
+            display: block;
+            font-size: 0.7rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 60px 0 20px;
+            background-color: #000;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 { color: var(--text-white); margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a:hover { color: var(--primary); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none; /* Em produção, usar JS para toggle */
+            }
+            .menu-toggle { display: block; }
+            .contact-container { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    Giacometti Maurer
+                    <span>Advocacia</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre o Escritório</a></li>
+                    <li><a href="#areas">Áreas de Atuação</a></li>
+                    <li><a href="#team">Corpo Jurídico</a></li>
+                    <li><a href="#blog">Artigos</a></li>
+                    <li><a href="#contact" class="btn">Contato</a></li>
+                </ul>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Advocacia em Família<br><span>& Patrimônio</span></h1>
+            <p>Casos complexos, prevenção e resolução estratégica de conflitos. Atuação focada na segurança jurídica e na proteção dos seus direitos.</p>
+            <a href="#about" class="btn">Conheça o Escritório</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Tradição e Estratégia</h3>
+                    <p>O escritório Giacometti Maurer Advocacia nasceu com a missão de oferecer um atendimento jurídico humanizado e altamente técnico. Compreendemos que por trás de cada processo existem histórias, famílias e patrimônios construídos com esforço.</p>
+                    <p>Nossa atuação é pautada na ética, transparência e na busca incessante pela melhor solução jurídica, seja ela consensual ou litigiosa. Não prometemos resultados impossíveis; garantimos dedicação técnica e combatividade na defesa dos seus interesses.</p>
+                    
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <h4>Ética</h4>
+                            <span>Compromisso</span>
+                        </div>
+                        <div class="stat-item">
+                            <h4>Técnica</h4>
+                            <span>Especialização</span>
+                        </div>
+                        <div class="stat-item">
+                            <h4>Foco</h4>
+                            <span>No Cliente</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ambiente do Escritório" class="about-img-styled">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas" class="areas">
+        <div class="container">
+            <h2 class="section-title">Áreas de Atuação</h2>
+            <div class="areas-grid">
+                
+                <div class="area-card">
+                    <i class="fas fa-users area-icon"></i>
+                    <h3>Direito das Famílias</h3>
+                    <ul class="area-list">
+                        <li>Acordos sobre guarda dos filhos e convivência</li>
+                        <li>Regulamentação de pensão alimentícia</li>
+                        <li>Partilha de bens em separações</li>
+                        <li>Acompanhamento de divórcios</li>
+                        <li>Planejamento e proteção do patrimônio familiar</li>
+                        <li>Reconhecimento de paternidade/maternidade</li>
+                        <li>Alienação parental e execução judicial</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <i class="fas fa-city area-icon"></i>
+                    <h3>Direito Imobiliário</h3>
+                    <ul class="area-list">
+                        <li>Compra e venda de imóveis</li>
+                        <li>Regularização de documentação e registros</li>
+                        <li>Contratos de locação e administração</li>
+                        <li>Despejos e cobrança de aluguéis</li>
+                        <li>Planejamento de patrimônio imobiliário</li>
+                        <li>Regularização de condomínios</li>
+                        <li>Assessoria em negócios complexos</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <i class="fas fa-scroll area-icon"></i>
+                    <h3>Sucessões</h3>
+                    <ul class="area-list">
+                        <li>Inventário e partilha de bens</li>
+                        <li>Testamentos (respeito à vontade)</li>
+                        <li>Planejamento sucessório (evitar conflitos)</li>
+                        <li>Doações em vida</li>
+                        <li>Regularização de documentos</li>
+                        <li>Mediação familiar em herança</li>
+                    </ul>
+                </div>
+
+            </div>
+            <p style="text-align: center; color: #666; margin-top: 30px; font-size: 0.9rem;">
+                *Atuação abrangente e personalizada para cada caso concreto.
+            </p>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">Corpo Jurídico</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Foto do Advogado" class="team-img">
+                    <div class="team-info">
+                        <h4>Dr. Nome do Sócio</h4>
+                        <span class="oab">OAB/UF 00.000</span>
+                        <p>Especialista em Direito de Família e Sucessões. Pós-graduado em Processo Civil. Membro da Comissão de Direito de Família.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Foto da Advogada" class="team-img">
+                    <div class="team-info">
+                        <h4>Dra. Nome da Sócia</h4>
+                        <span class="oab">OAB/UF 00.000</span>
+                        <p>Especialista em Direito Imobiliário e Contratos. Pós-graduada em Direito Notarial e Registral.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Artigos e Informações</h2>
+            <div class="blog-grid">
+                <div class="article-card">
+                    <h4>Inventário: Extrajudicial ou Judicial?</h4>
+                    <p>Entenda as diferenças, custos e quando é possível realizar o procedimento diretamente no cartório de forma mais célere.</p>
+                    <a href="#" class="read-more">Ler Artigo Completo</a>
+                </div>
+                <div class="article-card">
+                    <h4>Guarda Compartilhada x Unilateral</h4>
+                    <p>O que a lei diz sobre a convivência com os filhos e como os tribunais têm decidido em casos de conflito.</p>
+                    <a href="#" class="read-more">Ler Artigo Completo</a>
+                </div>
+                <div class="article-card">
+                    <h4>Cuidados na Compra de Imóveis</h4>
+                    <p>A importância da "Due Diligence" imobiliária para evitar fraudes e perda de patrimônio na aquisição da casa própria.</p>
+                    <a href="#" class="read-more">Ler Artigo Completo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <h2 style="color: #fff; font-family: 'Playfair Display'; margin-bottom: 20px;">Entre em Contato</h2>
+                <p style="color: #ccc; margin-bottom: 30px;">Para agendamento de consultas ou dúvidas jurídicas, utilize nossos canais oficiais.</p>
+                
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 1234, Sala 501 - Centro, Curitiba/PR</p>
+                    <p><i class="fas fa-envelope"></i> contato@giacomettimaurer.adv.br</p>
+                    <p><i class="fas fa-phone"></i> (41) 0000-0000</p>
+                </div>
+
+                <a href="https://wa.me/5541000000000" class="whatsapp-btn-large" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Falar com a Equipe
+                </a>
+                <span class="disclaimer-small">*O envio de mensagens não caracteriza relação advogado-cliente imediata.</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Giacometti Maurer</h5>
+                    <p>Advocacia artesanal focada na resolução estratégica de conflitos familiares e patrimoniais.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Links Úteis</h5>
+                    <ul>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#areas">Atuação</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Informações Legais</h5>
+                    <p>O conteúdo deste site tem caráter meramente informativo e não substitui a consulta jurídica.</p>
+                    <p style="margin-top: 10px;">Advogado Responsável:<br>Dr. [Nome]<br>OAB/PR 00.000</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Giacometti Maurer Advocacia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Menu Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.right = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = '#0e140e';
+                navLinks.style.padding = '20px';
+                navLinks.style.borderBottom = '1px solid #d4af37';
+            }
+        });
+    </script>
+</body>
+</html>
